@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <title>Autocomplete</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./assets/autocomplete.css">
+
+  </head>
+  <body>
+
+    <h1>Autocomplete</h1>
+
+    <form action="#" method="get" style="max-width: 16rem;">
+      <input type="text" id="autocomplete_01" aria-label="Autocomplete" autocomplete="off" autofocus>
+    </form>
+
+    <script src="./assets/autocomplete.js" defer></script>
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        const inputElement = document.getElementById('autocomplete_01');
+        const options = {
+          valueMatchItem: true,
+          items: [
+            'Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5', 'Item 6', 'Item 7', 'Item 8', 'Item 9', 'Item 10',
+            'Item 11', 'Item 12', 'Item 13', 'Item 14', 'Item 15', 'Item 16', 'Item 17', 'Item 18', 'Item 19', 'Item 20',
+          ],
+          onInit: () => {
+            console.log('Init');
+          },
+        };
+        window.autocomplete = new Autocomplete(inputElement, options);
+        // window.autocomplete.setItems([
+        //     'Item 1',
+        //     'Item 2',
+        //     'Item 3',
+        // ]);
+      });
+    </script>
+
+  </body>
+</html>
